@@ -24,8 +24,8 @@ import br.com.java.samples.repository.UserRepository;
 @Stateful
 public class UserService {
 	
-//	@Inject
-//	private Logger log;
+	@Inject
+	private Logger logger;
 	
 	@Inject
 	private UserRepository repository;
@@ -39,7 +39,7 @@ public class UserService {
 		try {
 			repository.save(user);
 		} catch (Exception e) {
-//			log.log(WARNING, "Error on try to save a user", e);
+			logger.log(WARNING, "Error on try to save a user", e);
 			builder = Response.serverError();
 		}
 		
