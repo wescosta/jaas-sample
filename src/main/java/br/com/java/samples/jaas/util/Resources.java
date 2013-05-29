@@ -1,4 +1,4 @@
-package br.com.java.samples.util;
+package br.com.java.samples.jaas.util;
 
 import java.util.logging.Logger;
 

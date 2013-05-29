@@ -1,4 +1,4 @@
-package br.com.java.samples.repository;
+package br.com.java.samples.jaas.repository;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import br.com.java.samples.model.User;
+import br.com.java.samples.jaas.model.User;
 
 @Stateless
 public class UserRepository {

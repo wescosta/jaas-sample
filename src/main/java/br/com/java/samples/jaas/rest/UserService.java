@@ -1,4 +1,4 @@
-package br.com.java.samples.rest;
+package br.com.java.samples.jaas.rest;
 
 import static java.util.logging.Level.WARNING;
 
@@ -16,8 +16,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.java.samples.model.User;
-import br.com.java.samples.repository.UserRepository;
+import br.com.java.samples.jaas.model.User;
+import br.com.java.samples.jaas.repository.UserRepository;
 
 @Path("/users")
 @RequestScoped

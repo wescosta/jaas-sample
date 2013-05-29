@@ -1,4 +1,4 @@
-package br.com.java.samples.model;
+package br.com.java.samples.jaas.model;
 
 import java.io.Serializable;
 import java.security.Principal;
@@ -30,6 +30,14 @@ public class User implements Principal, Serializable {
 	@Size(min = 4, max = 8, message = "Size 4-8")
 	private String password;
 	
+	public User() {
+	}
+	
+	public User(String login, String password) {
+		this.login = login;
+		this.password = password;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -56,6 +64,21 @@ public class User implements Principal, Serializable {
 
 	public String getName() {
 		return login;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null || !(obj instanceof User)) return false;
+		
+		User user = (User) obj;
+		
+		if (id != null && user.getId() != null)
+			return id.equals(user.getId());
+		
+		if (login != null && password != null)
+			return login.equals(user.getLogin()) && password.equals(user.getPassword());
+		
+		return false;
 	}
 	
 }
