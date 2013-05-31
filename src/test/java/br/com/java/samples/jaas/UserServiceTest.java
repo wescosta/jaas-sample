@@ -22,6 +22,7 @@ import org.jboss.shrinkwrap.resolver.api.maven.MavenDependencyResolver;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import br.com.java.samples.jaas.model.Role;
 import br.com.java.samples.jaas.model.User;
 import br.com.java.samples.jaas.repository.UserRepository;
 import br.com.java.samples.jaas.rest.UserService;
@@ -34,18 +35,18 @@ public class UserServiceTest {
 	public static Archive<?> createTestArchive() {
 		return ShrinkWrap
 				.create(WebArchive.class, "test.war")
-				.addClasses(User.class, UserRepository.class, UserService.class, Resources.class)
-				.addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
+				.addClasses(User.class, Role.class, UserRepository.class, UserService.class, Resources.class)
+				.addAsResource("META-INF/persistence.xml")
 				.addAsWebInfResource("arquillian-ds.xml").addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
 				.addAsLibraries(DependencyResolvers.use(MavenDependencyResolver.class)
-                        .artifact("org.hsqldb:hsqldb:2.2.9")
+                        .artifact("mysql:mysql-connector-java:5.1.25")
                         .resolveAs(JavaArchive.class));
 	}
 	
 	@Inject
 	private UserService service;
 	
-	private User user = new User("any_login", "any_pass");
+	private User user = new User("any_login", "any_pass", "admin", "manager");
 	
 	@Test
 	@InSequence(1)
