@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<jboss-web>
+     <security-domain>java:/jaas/jaas-sample</security-domain>
+</jboss-web>
