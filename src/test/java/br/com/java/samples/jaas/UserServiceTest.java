@@ -15,10 +15,7 @@ import org.jboss.arquillian.junit.InSequence;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.jboss.shrinkwrap.resolver.api.DependencyResolvers;
-import org.jboss.shrinkwrap.resolver.api.maven.MavenDependencyResolver;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -37,10 +34,7 @@ public class UserServiceTest {
 				.create(WebArchive.class, "test.war")
 				.addClasses(User.class, Role.class, UserRepository.class, UserService.class, Resources.class)
 				.addAsResource("META-INF/persistence.xml")
-				.addAsWebInfResource("arquillian-ds.xml").addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
-				.addAsLibraries(DependencyResolvers.use(MavenDependencyResolver.class)
-                        .artifact("mysql:mysql-connector-java:5.1.25")
-                        .resolveAs(JavaArchive.class));
+				.addAsWebInfResource("arquillian-ds.xml").addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
 	
 	@Inject

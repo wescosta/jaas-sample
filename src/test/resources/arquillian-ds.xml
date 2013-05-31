@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <datasources xmlns="http://www.jboss.org/ironjacamar/schema"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
-   
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+
+	<datasource jndi-name="jaas-sample-test-ds" pool-name="jaas-sample-test-ds">
+		<connection-url>jdbc:hsqldb:mem:jaas-sample</connection-url>
+		<driver-class>org.hsqldb.jdbc.JDBCDriver</driver-class>
+		<driver>hsqldb-2.2.9.jar</driver>
+		<security>
+			<user-name>sa</user-name>
+		</security>
+	</datasource>
+
 </datasources>

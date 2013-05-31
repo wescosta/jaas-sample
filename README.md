@@ -1,13 +1,17 @@
 Java Authentication and Authorization Service (JAAS) Sample
 ===========
 
-# JBoss Configuration
+## JBoss Configuration
 
-## Adding the mysql connector:
+### Adding database drivers connector:
 
+* MySQL to run the application
 cp ~/.m2/repository/mysql/mysql-connector-java/5.1.25/mysql-connector-java-5.1.25.jar $JBOSS_HOME/standalone/deployments/
 
-## Creating the datasource and the security domain
+* HSQL for Tests
+cp ~/.m2/repository/org/hsqldb/hsqldb/2.2.9/hsqldb-2.2.9.jar $JBOSS_HOME/standalone/deployments/
+
+### Creating the datasource and the security domain
 
 In your $JBOSS_HOME/standalone/configuration/standalone.xml, add the following configurations
 
