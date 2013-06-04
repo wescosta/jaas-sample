@@ -4,12 +4,24 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 	<display-name>JAAS Sample</display-name>
+	
+	<login-config>
+		<realm-name>jaas-sample</realm-name>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login-form.jsp</form-login-page>
+			<form-error-page>/login-error.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+	
+	<security-role>
+		<role-name>*</role-name>
+	</security-role>
 
 	<security-constraint>
-		<display-name>Main Security Constraint</display-name>
+		<display-name>Main Security Constraint that blocks all urls in /private/*</display-name>
 		<web-resource-collection>
-			<web-resource-name>Main Security Constraint</web-resource-name>
-			<url-pattern>/*</url-pattern>
+			<url-pattern>/private/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>*</role-name>
@@ -19,13 +31,8 @@
 		</user-data-constraint>
 	</security-constraint>
 	
-	<security-role>
-		<role-name>ADMIN</role-name>
-	</security-role>
-
-	<login-config>
-		<auth-method>BASIC</auth-method>
-		<realm-name>jaas-sample</realm-name>
-	</login-config>
-
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
 </web-app>
