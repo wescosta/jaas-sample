@@ -17,11 +17,18 @@
 	<security-role>
 		<role-name>*</role-name>
 	</security-role>
+	
+	<security-constraint>
+	    <display-name>Unsecured area just for login</display-name>
+	    <web-resource-collection>
+	        <url-pattern>/login*</url-pattern>
+	    </web-resource-collection>
+	</security-constraint>
 
 	<security-constraint>
-		<display-name>Main Security Constraint that blocks all urls in /private/*</display-name>
+		<display-name>Main Security Constraint that blocks all others urls</display-name>
 		<web-resource-collection>
-			<url-pattern>/private/*</url-pattern>
+			<url-pattern>/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>*</role-name>

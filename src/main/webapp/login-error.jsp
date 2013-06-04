@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>JAAS Sample</title>
+		<title>JAAS Sample - Login Error</title>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 	</head>
