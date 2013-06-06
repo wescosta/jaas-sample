@@ -26,9 +26,9 @@
 	</security-constraint>
 
 	<security-constraint>
-		<display-name>Main Security Constraint that blocks all others urls</display-name>
+		<display-name>Security Constraint that blocks all JAX-RS service urls</display-name>
 		<web-resource-collection>
-			<url-pattern>/*</url-pattern>
+			<url-pattern>/rest/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>*</role-name>

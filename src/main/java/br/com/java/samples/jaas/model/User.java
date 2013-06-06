@@ -33,7 +33,7 @@ public class User implements Principal, Serializable {
 	private String login;
 	
 	@NotNull
-	@Size(min = 4, max = 8, message = "Size 4-8")
+	@Size(max = 8, message = "Max Size: 8")
 	private String password;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

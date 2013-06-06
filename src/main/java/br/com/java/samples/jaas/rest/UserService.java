@@ -33,6 +33,7 @@ public class UserService {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
+//	@RolesAllowed("ADMIN") //TODO Restricting the method invocation, the test fails. How can I authenticate the user when invoke EJB methods ?
 	public Response save(User user) {
 		Response.ResponseBuilder builder = Response.ok();
 		
