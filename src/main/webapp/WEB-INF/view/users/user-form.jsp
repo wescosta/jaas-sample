@@ -7,6 +7,8 @@
 	</head>
 	<body>
 		<div class="container">
+			<jsp:include page="../template/header.jsp"/>
+			
 			<div class="row">
 				<div class="span3 hidden-phone"></div>
 				<div class="span6" id="form-login">

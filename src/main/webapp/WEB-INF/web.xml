@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	
 	<display-name>JAAS Sample</display-name>
 	
 	<login-config>
-		<realm-name>jaas-sample</realm-name>
 		<auth-method>FORM</auth-method>
+		<realm-name>jaas-sample</realm-name>
 		<form-login-config>
 			<form-login-page>/login-form.jsp</form-login-page>
 			<form-error-page>/login-error.jsp</form-error-page>
@@ -19,12 +20,22 @@
 	</security-role>
 	
 	<security-constraint>
-	    <display-name>Unsecured area just for login</display-name>
-	    <web-resource-collection>
-	        <url-pattern>/login*</url-pattern>
-	    </web-resource-collection>
+		<display-name>Unsecured area just for login</display-name>
+		<web-resource-collection>
+			<url-pattern>/login*</url-pattern>
+		</web-resource-collection>
 	</security-constraint>
-
+	
+	<security-constraint>
+		<display-name>Block index page that forwards to private area</display-name>
+		<web-resource-collection>
+			<url-pattern>/</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>*</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
 	<security-constraint>
 		<display-name>Security Constraint that blocks all JAX-RS service urls</display-name>
 		<web-resource-collection>
@@ -41,5 +52,4 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-	
 </web-app>

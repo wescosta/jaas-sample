@@ -9,11 +9,14 @@
 	</head>
 	<body>
 		<div class="container">
+			<jsp:include page="../template/header.jsp"/>
+			
 			<c:if test='<%=request.isUserInRole("ADMIN")%>'>
 				<div class="btn-toolbar">
 					<a href="?add" class="btn btn-primary">New User</a>
 				</div>
 			</c:if>
+			
 			<div class="well">
 			    <table class="table">
 			      <thead>
