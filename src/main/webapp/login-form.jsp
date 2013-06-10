@@ -18,7 +18,7 @@
 									<label>Username</label>
 								</div>
 								<div class="controls">
-									<input type="text" name="j_username" placeholder="your.name@youremail.com" class="input-large"/>
+									<input type="text" id="login" name="j_username" placeholder="your.name@youremail.com" class="input-large"/>
 								</div>
 							</div>
 							
@@ -27,7 +27,7 @@
 									<label>Password</label>
 								</div>
 								<div class="controls">
-									<input type="password" name="j_password" placeholder="type your password" class="input-large"/>
+									<input type="password" id="password" name="j_password" placeholder="type your password" class="input-large"/>
 								</div>
 							</div>
 	

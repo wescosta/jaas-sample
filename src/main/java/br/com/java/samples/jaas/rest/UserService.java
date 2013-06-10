@@ -5,6 +5,7 @@ import static java.util.logging.Level.WARNING;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateful;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
